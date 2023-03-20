@@ -1,0 +1,71 @@
+# Task Management Class Design 
+
+## 1. Describe the Problem
+
+As a user
+So that I can keep track of my tasks
+I want a program that I can add todo tasks to and see a list of them.
+
+As a user
+So that I can focus on tasks to complete
+I want to mark tasks as complete and have them disappear from the list.
+
+## 2. Design the Class Interface
+
+_Include the initializer and public methods with all parameters and return values._
+
+```ruby
+# EXAMPLE
+class TasksManagement
+  def initialize # name is a string
+    # task list
+  end
+  def add_task(task) # task is a string
+    # Add tasks and return a list of them
+  end
+  def list_tasks
+    # return a list of tasks
+  end
+
+  def complete_task(task)
+    # remove from the list
+  end
+
+end
+```
+## 3. Create Examples as Tests
+_Make a list of examples of how the class will behave in different situations._
+```ruby
+# EXAMPLE
+# 1
+task = TasksManagement.new
+task.add_task("Walk the dog")
+task.list_tasks # => "Walk the dog"
+# 2
+task = TasksManagement.new
+task.add_task() # fails with "No task set."
+
+# 3
+task = TasksManagement.new
+task.add_task("Walk the dog")
+task.add_task("Do exercise")
+task.add_task("Buy milk")
+task.list_tasks # => "Walk the dog Do exercise Buy milk"
+
+# 4
+task = TasksManagement.new
+task.complete_task("Walk the dog") # => remove from the list
+
+# 5
+task = TasksManagement.new
+task.add_task("Walk the dog")
+task.add_task("Do exercise")
+task.complete_task("Walk the dog")
+task.list_tasks("Do exercise")
+```
+
+_Encode each example as a test. You can add to the above list as you go._
+
+## 4. Implement the Behaviour
+
+_After each test you write, follow the test-driving process of red, green, refactor to implement the behaviour._
